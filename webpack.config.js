@@ -1,12 +1,13 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
+const PrettierPlugin = require("prettier-webpack-plugin");
 
 const htmlWebPackPlugin = new HtmlWebPackPlugin({
   template: "./src/public/index.html",
   filename: "./index.html"
 });
-
 const errorOverlayPlugin = new ErrorOverlayPlugin();
+const prettierPlugin = new PrettierPlugin();
 
 module.exports = {
   module: {
@@ -50,6 +51,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlWebPackPlugin, errorOverlayPlugin],
+  plugins: [htmlWebPackPlugin, errorOverlayPlugin, prettierPlugin],
   devtool: "cheap-module-source-map"
 };
