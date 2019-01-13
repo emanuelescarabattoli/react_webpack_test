@@ -1,12 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import style from "./index.scss"
+import App from './containers/App'
 
-import horse from './horse.png'
+import './index.scss';
 
-const Index = () => {
-  return <p className={style.test}><img src={horse}/>Hello Pippo!</p>;
-};
-
-ReactDOM.render(<Index />, document.getElementById("index"));
+ReactDOM.render(<App />, document.getElementById("index"));
