@@ -1,14 +1,21 @@
 import React, { Component } from "react";
+import { ConnectedRouter } from "connected-react-router";
 import { BrowserRouter, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 
+import configureStore from "../../sore";
 import Demo from "../Demo";
+
+const store = configureStore();
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Route exact path="/" component={Demo} />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Route exact path="/" component={Demo} />
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
