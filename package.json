@@ -5,9 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production",
-    "eslint-check": "eslint ./src/**/*.js",
-    "eslint-fix": "eslint --fix ./src/**/*.js"
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "connected-react-router": "^6.2.1",
