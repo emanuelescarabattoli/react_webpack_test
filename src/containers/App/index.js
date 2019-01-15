@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { ConnectedRouter } from "connected-react-router";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
