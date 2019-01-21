@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ReactTopProgressBar from "react-top-progress-bar";
 
 import { fetchTodos } from "../../actions/todos";
 import Button from "../../components/Button";
+import ReactTopProgressBar from "react-top-progress-bar"
 
 class Demo extends Component {
   componentDidMount() {
@@ -16,7 +16,7 @@ class Demo extends Component {
     ) : (
       <div >
         {this.props.todos.length}
-        <ReactTopProgressBar value={10}  withShadow color="green"/>
+        <ReactTopProgressBar value={50}  withShadow color="green"/>
       </div>
     );
   }
