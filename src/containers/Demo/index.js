@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import ReactTopProgressBar from "react-top-progress-bar";
 
 import { fetchTodos } from "../../actions/todos";
 import Button from "../../components/Button";
@@ -13,7 +14,10 @@ class Demo extends Component {
     return this.props.isFetching ? (
       <span>Loading...</span>
     ) : (
-      this.props.todos.length
+      <div >
+        {this.props.todos.length}
+        <ReactTopProgressBar value={10}  withShadow color="green"/>
+      </div>
     );
   }
 }
