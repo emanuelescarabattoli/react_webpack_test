@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 
@@ -6,8 +7,9 @@ const htmlWebPackPlugin = new HtmlWebPackPlugin({
   filename: "./index.html"
 });
 const errorOverlayPlugin = new ErrorOverlayPlugin();
+const envPlugin = env => new webpack.DefinePlugin({"process.env.URL": JSON.stringify(env.URL)});
 
-module.exports = {
+module.exports = env => ({
   module: {
     rules: [
       {
@@ -49,6 +51,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlWebPackPlugin, errorOverlayPlugin],
+  plugins: [htmlWebPackPlugin, errorOverlayPlugin, envPlugin(env)],
   devtool: "cheap-module-source-map"
-};
+});
